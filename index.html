@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Portfolio</title>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="left">
+      <a href="/">Kh Safkat Amin</a>
+    </div>
+
+    <div class="right">
+      <a href="http://github.com/khsafkatamin" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github"></i>
+        <span>Github</span>
+      </a>
+      
+      <a href="http://linkedin.com/in/khsafkatamin" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>Linkedin</span>
+      </a>
+      
+      <a href="mailto:safkat.amin@rwth-aachen.de">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- SECTION 1: Hero -->
+    <section class="hero-section">
+      <div class="text">
+        <h2>Hi, I'm Safkat 👋</h2>
+        <!-- <p>An Automotive Engineer and Researcher with a background in Mechanical Engineering from Bangladesh and a Master’s degree in Automotive Engineering from RWTH Aachen University in Germany. I’m deeply passionate about creating innovative solutions for intelligent mobility, from automated driving systems to AI-powered robotics. My work revolves around leveraging cutting-edge technologies to build smarter, safer, and more sustainable transportation systems. When I’m not immersed in research, I’m always exploring new ways to push the boundaries of AI and robotics.</p> -->
+        <p>I’m an Automotive Engineer currently based in Germany. I completed my undergraduate degree in Mechanical Engineering in Bangladesh and earned my master’s in Automotive Engineering from RWTH Aachen University. I love solving problems, writing clean code, and building system solutions while diving into new technologies—especially in AI and machine learning. My passion truly shines in research and development for automated driving systems, but I’m equally excited about opportunities in robotics, intelligent mobility, and beyond. Always curious and constantly learning, I’m here to turn ideas into impact!</p>
+        <div class="links">
+          <a href="assets/resume.pdf">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>My Resume</span>
+          </a>
+
+          <a href="#skills">
+            <i class="fa-solid fa-code"></i>
+            <span>Skills</span>
+          </a>
+          
+          <a href="#experience">
+            <i class="fa-solid fa-pen"></i>
+            <span>Experience</span>
+          </a>
+
+          <a href="#projects">
+            <i class="fa-solid fa-folder"></i>
+            <span>Projects</span>
+          </a>
+          
+          <a href="#contact">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="headshot">
+        <img src="images/whats.jpeg" alt="john doe headshot">
+      </div>
+    </section>
+
+    <!-- SECTION 2: Skills -->
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <div class="text">
+        As I’ve dived deeper into software development, I’ve picked up a solid set of skills over time. Here are some of the main tools and technologies I’m comfortable working with:
+      </div>
+
+      <div class="cells">
+        <!-- Programming Languages -->
+        <div class="cell">
+          <img src="images/python-logo.png" alt="Python logo">
+          <span>Python</span>
+        </div>
+        <div class="cell">
+          <img src="images/cpp-logo.png" alt="C++ logo">
+          <span>C++</span>
+        </div>
+        <!-- <div class="cell">
+          <img src="images/matlab-seeklogo.png" alt="MATLAB logo">
+          <span>MATLAB/ Simulink</span>
+        </div> -->
+
+        <!-- Machine Learning & Deep Learning -->
+        <div class="cell">
+          <img src="images/pytorch.svg" alt="PyTorch logo">
+          <span>PyTorch</span>
+        </div>
+        <div class="cell">
+          <img src="images/tensorflow.svg" alt="TensorFlow logo">
+          <span>TensorFlow</span>
+        </div>
+        <!-- <div class="cell">
+          <img src="images/cuda-logo.webp" alt="CUDA logo">
+          <span>CUDA</span>
+        </div> -->
+
+        <!-- Simulation & Robotics -->
+        <div class="cell">
+          <img src="images/ROS.svg" alt="ROS logo">
+          <span>ROS/ROS2</span>
+        </div>
+        <div class="cell">
+          <img src="images/gazebo.png" alt="Gazebo logo">
+          <span>Gazebo</span>
+        </div>
+
+        <!-- Databases -->
+        <!-- <div class="cell">
+          <img src="images/sql-logo.webp" alt="SQL logo">
+          <span>SQL</span>
+        </div> -->
+        <div class="cell">
+          <img src="images/mongodb.svg" alt="MongoDB logo">
+          <span>MongoDB</span>
+        </div>
+
+        <!-- Tools & Platforms -->
+        <div class="cell">
+          <img src="images/docker.svg" alt="Docker logo">
+          <span>Docker</span>
+        </div>
+        <div class="cell">
+          <img src="images/git.svg" alt="Git logo">
+          <span>Git</span>
+        </div>
+        <div class="cell">
+          <img src="images/linux-tux-seeklogo.png" alt="Linux logo">
+          <span>Linux</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 3: Testimony
+    <section id="testimony" class="testimony-section">
+      <h2>Testimony</h2>
+
+      <div class="group">
+        <div class="person-details">
+          <img src="images/testimony-headshot.webp">
+          <p>John Doe</p>
+          <p>Lorem ipsum dolor sit.</p>
+        </div>
+
+        <div class="text">
+          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, sint repudiandae ratione exercitationem saepe distinctio cumque quaerat nostrum laborum? Rem adipisci natus eos nemo reprehenderit, cumque nostrum enim commodi. Eum, enim vero eveniet doloremque sed veniam. Doloremque explicabo non reprehenderit expedita! Accusamus mollitia repellendus dolorum officiis libero quod deleniti cum."
+        </div>
+      </div>
+    </section> -->
+
+
+    <!-- SECTION 4: Experience -->
+    <section id="experience" class="experience-section">
+      <h2>Experience</h2>
+    
+      <div class="experience-cards">
+        <div class="experience-card">
+          <img src="images/ika-logo.png" class="company-logo" alt="Company Logo">
+          <h3>Master Thesis Student</h3>
+          <div class="company-name">Institut für Kraftfahrzeuge, RWTH Aachen University</div>
+    
+          <div class="tech-used">
+            <img src="images/python-logo.png" alt="Python">
+            <img src="images/mongodb.svg" alt="MongoDB">
+            <img src="images/docker.svg" alt="Docker">
+            <!-- Add more as needed -->
+          </div>
+    
+          <div class="period">June 2024 – March 2025</div>
+    
+          <ul>
+            <li>Worked as a Master's thesis student in the Vehicle Intelligence and Automated Driving department.</li>
+            <li>Designed and implemented a framework to harmonize diverse driving behavior datasets for unified analysis.</li>
+            <li>Enriched behavior data with environmental context such as weather and road network information to support advanced research.</li>
+            <li>Built a centralized database system to store and query structured behavioral scenarios flexibly and efficiently.</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <img src="images/galaxis-logo.png" class="company-logo" alt="Company Logo">
+          <h3>Team Member</h3>
+          <div class="company-name">Team Galaxis RWTH</div>
+    
+          <div class="tech-used">
+            <img src="images/python-logo.png" alt="Python">
+            <img src="images/cpp-logo.png" alt="C++">
+            <img src="images/pytorch.svg" alt="PyTorch">
+            <img src="images/ROS.svg" alt="ROS">
+            <img src="images/gazebo.png" alt="Gazebo">
+            <img src="images/docker.svg" alt="Docker">
+            <!-- Add more as needed -->
+          </div>
+    
+          <div class="period">December 2022 – July 2024</div>
+    
+          <ul>
+            <li>Worked in the Vehicle Perception team with a focus on enhancing the onboard perception system for a more holistic scene understanding.</li>
+            <li>Developed a real-time semantic image segmentation module using deep learning, deployed on an NVIDIA Jetson AGX Xavier.</li>
+            <li>Handled the end-to-end pipeline — from data collection and annotation to model training, fine-tuning, and deployment.</li>
+            <li>Gained hand-on experience with ROS 2, Gazebo Simulation, and supported integration with hardware and autopilot teams for testing.</li>
+          </ul>          
+        </div>
+        <div class="experience-card">
+          <img src="images/imse-logo.png" class="company-logo" alt="Company Logo">
+          <h3>Student Assistant</h3>
+          <div class="company-name">Institute for Machine Elements and Systems Engineering, RWTH Aachen University</div>
+    
+          <div class="tech-used">
+            <img src="images/python-logo.png" alt="Python">
+            <img src="images/docker.svg" alt="Docker">
+            <!-- Add more as needed -->
+          </div>
+    
+          <div class="period">March 2024 – March 2025</div>
+    
+          <ul>
+            <li>Operated a tribological test bench to collect experimental data on wear and boundary layer formation.</li>
+            <li>Developed machine learning models to analyze experimental data and predict tribological behavior.</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <img src="images/RAIL.png" class="company-logo" alt="Company Logo">
+          <h3>Executive Engineer</h3>
+          <div class="company-name">Rancon Auto Industries Ltd. (RAIL)</div>
+    
+          <div class="tech-used">
+            <img src="images/office-365.png" alt="Office 365">
+            <!-- Add more as needed -->
+          </div>
+    
+          <div class="period">January 2018 – February 2021</div>
+    
+          <ul>
+            <li>Worked at RAIL, a Bangladesh-based automotive assembly company producing passenger and commercial vehicles from CKD (Completely Knocked Down) kits.</li>
+            <li>In the first half of my tenure, worked in the Quality Control and Repair section, supervising vehicle quality, ensuring regulatory compliance, and conducting diagnostics, root cause analysis, and FMEA.</li>
+            <li>In the second half, led Material Management operations, overseeing logistics and digitalizing workflows with advanced Excel tools to improve efficiency and traceability.</li>
+          </ul>
+          
+          
+        </div>
+      
+    </section>
+
+    <section id="projects" class="projects-section">
+      <h2>Projects</h2>
+      <div class="project-cards" id="projectCards">
+        
+        <div class="project-card">
+          <div class="project-tag">Master’s Dissertation</div>
+          <h3>Development of a framework for harmonization, enrichment and classification of behavioral data.</h3>
+          <div class="project-tools">
+            <img src="images/python-logo.png" alt="Python" />
+            <img src="images/mongodb.svg" alt="MongoDB" />
+            <img src="images/docker.svg" alt="Docker" />
+          </div>
+          <p>Understanding the influence of environmental factors—like road geometry, traffic density, and weather—is essential for developing safe and intelligent automated driving systems. However, existing behavioral datasets often differ in structure and lack this crucial contextual data. This thesis proposes a unified framework to harmonize diverse datasets and systematically enrich them with structured environmental information, enabling more holistic behavior analysis for automated driving.</p>
+          <a href="project-details/Thesis.html" class="read-more">Read More →</a>
+        </div>
+    
+        <div class="project-card">
+          <div class="project-tag">Automated and Connected Driving Challenges - Research Project</div>
+          <h3>A Comparative Study on YOLOv5-Based Traffic Light Recognition for Automated Driving.</h3>
+          <div class="project-tools">
+            <img src="images/python-logo.png" alt="Python" />
+            <img src="images/docker.svg" alt="Docker" />
+          </div>
+          <p>
+            In scenarios where V2X support is unavailable, onboard camera-based traffic light detection becomes crucial for ensuring safe and autonomous navigation. This project explores the effectiveness of YOLOv5-based recognition models and highlights the importance of adapting perception systems to geographical differences in traffic infrastructure and light design, aiming to improve robustness in automated driving across diverse environments.
+          </p>
+          <a href="project-details/ACDC-RP-Project.html" class="read-more">Read More →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag">Generative AI Hackathon, EESTECH Challenge AACHEN</div>
+          <h3>Customer Experience Enhancement with Public Data and Generative AI.</h3>
+          <div class="project-tools">
+            <img src="images/python-logo.png" alt="Python" />
+            <img src="images/node-js.svg" alt="Node.js" />
+          </div>
+          <p>
+            As part of the EESTECH Challenge Aachen, this project focused on enhancing customer satisfaction using generative AI by analyzing GitHub issues extracted from Infineon’s repositories. Given the large volume of technical queries and inconsistent handling styles among contributors, maintaining a consistent and helpful user experience was difficult. Our solution involved developing a feedback generation system that responded to each issue from the perspective of three distinct AI-generated personas, each representing a different communication style—ranging from highly technical to empathetic. These personalized responses were delivered through an interactive chatbot, ultimately helping to improve support quality and earning our team <strong>second place</strong> in the competition.
+          </p>
+          <a href="project-details/GenAIHackathon.html" class="read-more">Read More →</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag">Automated Driving</div>
+          <h3>Semantic Segmentation-Based Perception System for Automated Driving.</h3>
+          <div class="project-tools">
+            <img src="images/python-logo.png" alt="Python" />
+            <img src="images/ROS.svg" alt="ROS" />
+            <img src="images/docker.svg" alt="Docker" />
+          </div>
+          <p>
+            As part of a broader effort to upgrade the perception system of our autonomous research vehicle, I developed a real-time, camera-based semantic segmentation module to replace a prior system limited to lane detection only. The goal was to enable more holistic environmental understanding by classifying the entire driving scene—including roads, non-drivable areas, and obstacles.
+          </p>
+          <a href="project-details/Galaxis-img-seg.html" class="read-more">Read More →</a>
+    
+      </div>
+    </section>
+    
+
+    <!-- SECTION 4: Contact -->
+    <!-- <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+
+      <div class="group">
+        <div class="text">
+          I’m always excited to connect, share ideas, or chat about interesting projects. Whether you want to collaborate, ask questions, or just say hello—feel free to get in touch!
+        </div>
+
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name">
+
+          <label for="email">Email</label>
+          <input type="email" id="email">
+
+          <label for="message">Message</label>
+          <textarea id="message" cols="30" rows="10"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section> -->
+
+    <!-- <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+    
+      <div class="group">
+        <div class="text contact-info">
+          <p><strong>Phone:</strong> +49 1575 2642171</p>
+          <p><strong>Email:</strong> safkat.amin@rwth-aachen.de</p>
+          <p><strong>Address:</strong> Aachen, Germany</p>
+    
+          <p>I’m always excited to connect, share ideas, or chat about interesting projects. Whether you want to collaborate, ask questions, or just say hello—feel free to get in touch!</p>
+        </div>
+    
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+    
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+    
+          <label for="message">Message</label>
+          <textarea id="message" name="message" cols="30" rows="10" required></textarea>
+    
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section> -->
+    <section id="contact" class="contact">
+      <h2>CONTACT</h2>
+      <p class="headline">I’m always open to ideas, collaborations, or simply saying hello.</p>
+    
+      <div class="contact-details">
+        <div><i class="fa-solid fa-phone"></i> +49 1575 2642171</div>
+        <div><i class="fa-solid fa-envelope"></i> safkat.amin@rwth-aachen.de</div>
+        <div><i class="fa-solid fa-location-dot"></i> Aachen, Germany</div>
+      </div>
+    
+      <form class="contact-form">
+        <div class="form-row">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+        </div>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Message" rows="5" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    
+    
+  </main>
+</body>
+</html>
