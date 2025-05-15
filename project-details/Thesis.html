@@ -138,38 +138,31 @@
     <div class="section">
       <h2>Solution Overview</h2>
       <ul>
-        <li>The framework is implemented using <strong>Python</strong> and executed within a <strong>Dockerized Ubuntu 22.04</strong> environment.</li>
-        <li>Data is stored and structured using a <strong>MongoDB</strong> backend.</li>
-        <li>Three publicly available datasets were processed:
+        <li>Processed and harmonized three real-world trajectory datasets:
           <ul>
-            <li><strong>inD Dataset</strong></li>
-            <li><strong>TUMDOT–MUC Dataset</strong></li>
-            <li><strong>IMPTC Dataset</strong></li>
+            <li>inD</li>
+            <li>TUMDOT–MUC</li>
+            <li>IMPTC</li>
           </ul>
         </li>
-        <li>Each dataset is harmonized into a unified trajectory format, then enriched with:
+        <li>Enriched trajectories with:
           <ul>
-            <li><strong>OpenStreetMap (OSM)</strong>-based road network data</li>
-            <li><strong>DWD (Deutscher Wetterdienst)</strong> weather data</li>
-            <li><strong>High-definition maps</strong> (Lanelet2 format)</li>
+            <li>Road network data (OpenStreetMap)</li>
+            <li>Weather conditions (DWD)</li>
+            <li>Dynamic objects</li>
+            <li>HD map features (Lanelet2)</li>
           </ul>
         </li>
-        <li>Vehicle manuevers are automatically detected and classified</li>
-        <li>Pairwise vehicle interactions are analyzed and labeled.</li>
-        <li>Safety-critical metrics, including <strong>Time-to-Collision (TTC)</strong> and <strong>Post-Encroachment Time (PET)</strong>, are computed and stored.</li>
+        <li>Automatically detected and classified dynamic objects' maneuvers.</li>
+        <li>Analyzed and labeled pairwise vehicle interactions.</li>
+        <li>Computed safety-critical metrics:
+          <ul>
+            <li>Time-to-Collision (TTC)</li>
+            <li>Post-Encroachment Time (PET)</li>
+          </ul>
+        </li>
       </ul>
     </div>
-    
-    <!-- <div class="section">
-      <h2>Workflow & Technical Highlights</h2>
-      <ul>
-        <li><strong>Harmonization</strong> and <strong>enrichment</strong> steps are modular, supporting additional datasets with minimal changes.</li>
-        <li><strong>Road geometry</strong> and <strong>junctions</strong> are extracted from OSM and Lanelet2 map data.</li>
-        <li>Vehicle maneuvers are automatically classified using <strong>spatial and directional analysis</strong>.</li>
-        <li><strong>Interaction detection models</strong> compute relative positions, distances, and future trajectory predictions to classify behavioral patterns.</li>
-        <li><strong>Scene structuring</strong> enables focused studies on a center vehicle within a scenario window, as visualized in sample outputs.</li>
-      </ul>
-    </div> -->
     
     <div class="section">
       <h2>Project Outcomes</h2>
