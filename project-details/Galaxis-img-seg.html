@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YOLOv5 Traffic Light Detection</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .project-container {
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .project-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .project-subtitle {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .project-gif {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      margin: 30px auto;
+    }
+
+    .project-video {
+        width: 100%;
+        max-width: 1000px;
+        aspect-ratio: 16 / 9;
+        display: block;
+        border-radius: 12px;
+        margin: 30px auto;
+      }
+      
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--link-color);
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .code-link a {
+        background-color: var(--link-color);
+        color: white;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+      }
+      
+      .code-link a:hover {
+        background-color: #005f99;
+      }
+
+    @media (max-width: 600px) {
+      .project-title {
+        font-size: 1.5rem;
+      }
+
+      .section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="project-container">
+        <h1 class="project-title">Semantic Segmentation-Based Perception System for Automated Driving</h1>
+        <div class="project-subtitle">Autonomous Vehicle Development | March – July 2023</div>
+      
+        <video autoplay muted loop playsinline class="project-video">
+            <source src="../assets/project-details/segnet-cover.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 10px;">
+          <em>Visualization of real-time segmentation output</em>
+        </p>
+      
+        <div class="section">
+          <h2>Introduction</h2>
+          <p>
+            As part of a broader effort to upgrade the perception system of our autonomous vehicle at Team GalaXis, I developed a real-time, camera-based semantic segmentation module to replace a prior system limited to lane detection only. The goal was to enable more holistic environmental understanding by classifying the entire driving scene—including roads, non-drivable areas, and obstacles.
+          </p>
+          <br>
+          <p>
+            The system leveraged a front-mounted camera, with the image stream first converted into a bird’s-eye view (BEV) using inverse perspective mapping (IPM). The output was then processed by a semantic segmentation model trained on data we collected and annotated ourselves.
+          </p>
+        </div>
+      
+        <div class="section">
+            <h2>Workflow & Implementation Highlights</h2>
+            <ul>
+              <li>
+                    Developed a <strong>ROS node</strong> to perform inverse perspective mapping (IPM) and transform front-view images into top-view BEV format.
+                    <div style="margin-top: 12px; margin-bottom: 20px; display: flex; gap: 24px;">
+                      <figure style="flex: 1; text-align: center;">
+                        <img src="../assets/project-details/IPM/Fview.png" alt="Front View" style="width: 80%; border-radius: 6px;" />
+                        <figcaption style="margin-top: 8px; font-size: 0.9em; color: #555;">Front-View Camera Input</figcaption>
+                      </figure>
+                      <figure style="flex: 1; text-align: center;">
+                        <img src="../assets/project-details/IPM/Tview.png" alt="Top View BEV Output" style="width: 80%; border-radius: 6px;" />
+                        <figcaption style="margin-top: 8px; font-size: 0.9em; color: #555;">Transformed Top-View Output (BEV)</figcaption>
+                      </figure>
+                    </div>
+              </li>
+                  
+          
+              <li>Captured training data by recording <strong>ROS bag files</strong> across various driving scenarios using our vehicle's front camera.</li>
+              <li>Manually annotated frames into semantic categories: <strong>drivable area, non-drivable area, static obstacles</strong>, and more.</li>
+              <li>
+                Trained a <strong>SegNet-based segmentation model</strong> using the 
+                <a href="https://github.com/dusty-nv/jetson-inference" target="_blank" rel="noopener noreferrer">
+                  dusty-nv/jetson-inference
+                </a> framework.
+              </li>              
+              <li>Modified and extended the <code>jetson-inference</code> training pipeline to support our custom dataset.</li>
+              <li>
+                Deployed the final model on an <strong>NVIDIA Jetson AGX Xavier</strong> using a ROS node for real-time inference.
+                <br />
+                <small style="color: #555;">
+                  <em>Note:</em> Some layers were not compatible with the DLA (Deep Learning Accelerator), so the model was deployed on GPU instead. More details can be found in 
+                  <a href="https://github.com/dusty-nv/jetson-inference/issues/1838" target="_blank" rel="noopener noreferrer">this GitHub issue</a>.
+                </small>
+              </li>
+            </ul>
+          </div>
+          
+      
+        <div class="section">
+          <h2>Model & Deployment Configuration</h2>
+          <ul>
+            <li><strong>Model:</strong> SegNet</li>
+            <li><strong>Framework:</strong> dusty-nv/jetson-inference (PyTorch based)</li>
+            <li><strong>Hardware:</strong> NVIDIA Jetson AGX Xavier</li>
+            <li><strong>Development Tools:</strong> Jupyter Notebook + VS Code</li>
+            <li><strong>Training Platform:</strong> Ubuntu 20.04 with Docker</li>
+          </ul>
+        </div>
+      </div>
+      
+
+</body>
+</html>

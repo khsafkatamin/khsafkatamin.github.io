@@ -161,7 +161,7 @@ nav .right a span {
   font-size: 18px;
 }
 
-/* SECTION 4: Experience */
+/* SECTION 3: Experience */
 .experience-section {
   padding: 0 50px;
   margin-bottom: 100px;
@@ -246,7 +246,7 @@ nav .right a span {
   line-height: 1.5;
 }
 
-/* PROJECTS */
+/* SECTION 4: Projects */
 .projects-section {
   padding: 0 50px;
   margin-bottom: 100px;
@@ -369,7 +369,7 @@ nav .right a span {
   filter: brightness(.9);
 } */
 
-/* Root section */
+/* Section 5: Contact */
 .contact {
   max-width: 700px;
   margin: 80px auto;
@@ -483,12 +483,7 @@ nav .right a span {
 }
 
 
-@media (max-width: 850px) {
-  /* SECTION 1: Hero */
-  .hero-section .text h2 {
-    font-size: 35px;
-  }
-}
+
 
 @media (max-width: 740px) {
   /* SECTION 1: Hero */
@@ -498,20 +493,6 @@ nav .right a span {
 
   .hero-section .headshot img {
     width: 300px;
-  }
-
-  /* SECTION 3: Testimony */
-  .testimony-section {
-    text-align: center;
-  }
-
-  .testimony-section .group {
-    flex-direction: column;
-  }
-
-  /* SECTION 4: Contact */
-  .contact-section .group {
-    flex-direction: column;
   }
 }
 
@@ -553,12 +534,17 @@ nav .right a span {
     font-size: 16px;
   }
 
-  /* SECTION 3: Testimony */
-  .testimony-section {
+  /* SECTION 3: Experience */
+  .experience-section {
     padding: 0 20px;
   }
 
-  /* SECTION 4: Contact */
+  /* SECTION 4: Projects */
+  .projects-section {
+    padding: 0 20px;
+  }
+
+  /* SECTION 5: Contact */
   .contact-section {
     padding: 0 20px;
   }

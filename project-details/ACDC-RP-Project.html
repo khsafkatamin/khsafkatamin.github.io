@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YOLOv5 Traffic Light Detection</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .project-container {
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .project-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .project-subtitle {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .project-gif {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      margin: 30px auto;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--link-color);
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .code-link a {
+      background-color: var(--link-color);
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    
+    .code-link a:hover {
+      background-color: #005f99;
+    }
+
+    @media (max-width: 600px) {
+      .project-title {
+        font-size: 1.5rem;
+      }
+
+      .section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="project-container">
+    <h1 class="project-title">A Comparative Study on YOLOv5-Based Traffic Light Recognition for Automated Driving</h1>
+    <div class="project-subtitle">Automated and Connected Driving Challenges – Research Project | August 2023</div>
+
+    <img src="../assets/project-details/acdc-rp-cover.gif" alt="Traffic Light Detection Animation" class="project-gif" />
+    <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 10px;">
+      <em>Inference visualized on a sample traffic video sourced from <a href="https://www.pexels.com" target="_blank" style="color: #007acc;">Pexels.com</a></em>
+    </p>
+
+    <div class="section">
+      <h2>Introduction</h2>
+      <p>
+        In the context of urban automated driving—where seamless decision-making hinges on timely recognition of traffic signals—I developed a camera-based traffic light detection system leveraging the YOLOv5 deep learning architecture. This was part of the <strong>Automated and Connected Driving Challenges - Research Project (ACDC-RP)</strong> course, with the primary objective to deliver real-time, robust detection in environments where V2X communication isn't guaranteed.
+      </p>
+      <br>
+      <p>
+        The system was trained on two widely adopted datasets—<strong>Bosch Small Traffic Light Dataset (BSTLD)</strong> and <strong>DriveU Traffic Light Dataset (DTLD)</strong>. It not only outpaced traditional detectors like SSD and Faster R-CNN in both accuracy and inference speed but also exposed critical insights about dataset-driven generalization gaps.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Workflow & Implementation Highlights</h2>
+      <ul>
+        <li>Designed a full end-to-end pipeline for traffic light detection and classification using <strong>YOLOv5s</strong>.</li>
+        <li>Created custom scripts to convert <em>BSTLD (PASCAL VOC)</em> and <em>DTLD (COCO)</em> formats into YOLO-compliant annotation formats.</li>
+        <li>Harmonized class labels across datasets for uniform training objectives.</li>
+        <li>Integrated Ultralytics’ YOLOv5 framework with adaptive training strategies tailored to each dataset.</li>
+        <li>Conducted comparative model training using each dataset separately to evaluate cross-domain robustness.</li>
+        <li>Executed performance benchmarks using inference latency and evaluation metrics.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Visual Results</h2>
+      <div style="display: flex; justify-content: space-between; gap: 20px;">
+        <div style="text-align: center; flex: 1;">
+          <img src="../assets/project-details/TLD/TLD-1.png" alt="Detection Result 1" style="width: 100%; height: auto; max-width: 600px;"/>
+          <p><strong>Detection on DTLD</strong></p>
+        </div>
+        <div style="text-align: center; flex: 1;">
+          <img src="../assets/project-details/TLD/TLD-3.png" alt="Detection Result 2" style="width: 100%; height: auto; max-width: 550px;"/>
+          <p><strong>Detection on BSTLD</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Evaluation & Insights</h2>
+      <ul>
+        <li>Both models were evaluated cross-dataset to assess <strong>generalization performance</strong>.</li>
+        <li><strong>DTLD-trained model</strong> demonstrated superior transferability and accuracy—even when tested on BSTLD.</li>
+        <li><strong>BSTLD-trained model</strong> performed well within its own domain but showed significant degradation across DTLD samples.</li>
+        <li>F1-score was the key metric—crucial due to the asymmetric cost of misclassification in real-world driving scenarios.</li>
+        <li>The study reinforced the importance of <strong>dataset diversity</strong> and <strong>label consistency</strong> in achieving real-world robustness.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li><strong>YOLOv5s</strong> consistently outperformed SSD and Faster R-CNN in both precision and inference time under the same constraints.</li>
+        <li><strong>DTLD’s dataset richness</strong> enabled better generalization, revealing the direct impact of training diversity on model performance.</li>
+        <li>Strategic preprocessing steps—especially filtering and label mapping—were critical in optimizing training outcomes.</li>
+        <li>Despite the promising results, real-world deployment calls for additional fine-tuning and adaptation to domain-specific lighting and occlusion conditions.</li>
+        <li>The study highlights YOLOv5’s strength for embedded systems while pointing to dataset-centric challenges in safety-critical applications.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Model & Training Configuration</h2>
+      <ul>
+        <li><strong>Model:</strong> YOLOv5s</li>
+        <li><strong>Datasets Used:</strong> DTLD, BSTLD</li>
+        <li><strong>Global Steps:</strong> 200,000</li>
+        <li><strong>Batch Size:</strong> 1 & 4</li>
+        <li><strong>Input Size:</strong> 640×640</li>
+        <li><strong>Optimizer:</strong> Stochastic Gradient Descent (SGD)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Development Environment</h2>
+      <ul>
+        <li><strong>Framework:</strong> Ultralytics YOLOv5 (PyTorch-based)</li>
+        <li><strong>Hardware:</strong> NVIDIA RTX 3060 Laptop GPU (6 GB VRAM)</li>
+        <li><strong>Development Tools:</strong> Jupyter Notebook + VS Code</li>
+        <li><strong>Platform:</strong> Ubuntu 20.04 LTS (Dockerized)</li>
+      </ul>
+    </div>
+
+    <div class="section code-link">
+      <h2>GitHub Repository</h2>
+      <a href="https://github.com/ika-rwth-aachen/acdc-research-projects/tree/main/reports/05-Traffic-Light-Detection/2023-09_Amin" target="_blank">View Project on GitHub</a>
+    </div>
+  </div>
+
+</body>
+</html>

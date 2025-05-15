@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Experience Enhancement with Public Data and Generative AI</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .project-container {
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .project-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .project-subtitle {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .project-gif {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      margin: 30px auto;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--link-color);
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .code-link ul {
+      list-style-type: none;
+      margin-top: 12px;
+    }
+    
+    .code-link li {
+      list-style-type: disc;           
+      list-style-position: inside;     
+      padding-left: 0;                
+      margin-bottom: 12px;
+    }
+    
+    .code-link a {
+      background-color: var(--link-color);
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    
+    .code-link a:hover {
+      background-color: #005f99;
+    }
+    
+
+    @media (max-width: 600px) {
+      .project-title {
+        font-size: 1.5rem;
+      }
+
+      .section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="project-container">
+    <h1 class="project-title">Development of a framework for harmonization, enrichment and classification of behavioral data.</h1>
+    <div class="project-subtitle">Master's Dissertation | March 2025</div>
+  
+    <img src="../assets/project-details/thesis-cover.png" alt="Chatbot Feedback Demo" class="project-gif" />
+    <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 10px;">
+      <em>Road segment detection in the TUMDOT-MUC dataset using Open Street Map data. The blue rectangle shows the
+        observed area, the orange boundaries represent extracted junctions, and green markers
+        indicate road users within the junctions. Road users outside junctions are marked in grey.</em>
+    </p>
+  
+    <div class="section">
+      <h2>Introduction</h2>
+      <p>
+        Automated Driving Systems (ADS) are increasingly expected to handle critical traffic scenarios—many of which even human drivers find challenging. To ensure safe and intelligent decision-making under such conditions, it is essential for these systems to gain a deep understanding of road user behavior.
+      </p>
+      <br>
+      <p>
+        Trajectory datasets offer a powerful means to study driving behavior by providing fine-grained motion data of vehicles and vulnerable road users over time. A growing number of such datasets are available, captured under diverse conditions and by various organizations. However, a major challenge persists: these datasets often differ significantly in structure, semantics, and content, making cross-dataset analysis complex and time-consuming.
+      </p>
+      <br>
+      <p>
+        Moreover, despite the importance of context in driving behavior, many existing trajectory datasets lack comprehensive environmental information—such as road geometry, traffic signal states, or weather conditions—which are essential for deeper behavioral analysis.
+      </p>
+      <br>
+      <p>
+        To address these challenges, this thesis proposes and implements a framework that enables harmonization of trajectory datasets from heterogeneous sources into a unified structure. The framework not only standardizes the data but also enriches it by integrating relevant environmental information. The resulting structured dataset provides researchers with a consistent and enriched basis for studying and classifying driving behavior across various traffic scenarios and geographic contexts.
+      </p>
+    </div>
+  
+    <div class="section">
+      <h2>Solution Overview</h2>
+      <ul>
+        <li>The framework is implemented using <strong>Python</strong> and executed within a <strong>Dockerized Ubuntu 22.04</strong> environment.</li>
+        <li>Data is stored and structured using a <strong>MongoDB</strong> backend.</li>
+        <li>Three publicly available datasets were processed:
+          <ul>
+            <li><strong>inD Dataset</strong></li>
+            <li><strong>TUMDOT–MUC Dataset</strong></li>
+            <li><strong>IMPTC Dataset</strong></li>
+          </ul>
+        </li>
+        <li>Each dataset is harmonized into a unified trajectory format, then enriched with:
+          <ul>
+            <li><strong>OpenStreetMap (OSM)</strong>-based road network data</li>
+            <li><strong>DWD (Deutscher Wetterdienst)</strong> weather data</li>
+            <li><strong>High-definition maps</strong> (Lanelet2 format)</li>
+          </ul>
+        </li>
+        <li>Vehicle manuevers are automatically detected and classified</li>
+        <li>Pairwise vehicle interactions are analyzed and labeled.</li>
+        <li>Safety-critical metrics, including <strong>Time-to-Collision (TTC)</strong> and <strong>Post-Encroachment Time (PET)</strong>, are computed and stored.</li>
+      </ul>
+    </div>
+    
+    <!-- <div class="section">
+      <h2>Workflow & Technical Highlights</h2>
+      <ul>
+        <li><strong>Harmonization</strong> and <strong>enrichment</strong> steps are modular, supporting additional datasets with minimal changes.</li>
+        <li><strong>Road geometry</strong> and <strong>junctions</strong> are extracted from OSM and Lanelet2 map data.</li>
+        <li>Vehicle maneuvers are automatically classified using <strong>spatial and directional analysis</strong>.</li>
+        <li><strong>Interaction detection models</strong> compute relative positions, distances, and future trajectory predictions to classify behavioral patterns.</li>
+        <li><strong>Scene structuring</strong> enables focused studies on a center vehicle within a scenario window, as visualized in sample outputs.</li>
+      </ul>
+    </div> -->
+    
+    <div class="section">
+      <h2>Project Outcomes</h2>
+      <ul>
+        <li>A <strong>scalable and extensible framework</strong> for harmonizing and enriching diverse trajectory datasets.</li>
+        <li>A <strong>query-friendly database structure</strong> supporting behavioral studies at multiple levels.</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2>Development Environment</h2>
+      <ul>
+        <li><strong>Framework Language:</strong> Python</li>
+        <li><strong>Environment:</strong> Docker (Ubuntu 22.04)</li>
+        <li><strong>Database:</strong> MongoDB</li>
+        <li><strong>Map Data:</strong> OpenStreetMap + Lanelet2</li>
+        <li><strong>Weather Source:</strong> DWD API</li>
+      </ul>
+    </div>
+    <div class="section code-link">
+      <h2>Project Resources</h2>
+      <ul>
+        <li>Project repository will be shared once publicly available.</li>
+        <li>Related publication will be linked here after official release.</li>
+      </ul>
+    </div>
+    
+  </div>
+
+</body>
+</html>

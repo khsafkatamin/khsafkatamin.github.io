@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Experience Enhancement with Public Data and Generative AI</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .project-container {
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .project-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .project-subtitle {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .project-gif {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      margin: 30px auto;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--link-color);
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .code-link ul {
+      list-style-type: none;
+      margin-top: 12px;
+    }
+    
+    .code-link li {
+      list-style-type: disc;           
+      list-style-position: inside;     
+      padding-left: 0;                
+      margin-bottom: 12px;
+    }
+    
+    .code-link a {
+      background-color: var(--link-color);
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    
+    .code-link a:hover {
+      background-color: #005f99;
+    }
+    
+
+    @media (max-width: 600px) {
+      .project-title {
+        font-size: 1.5rem;
+      }
+
+      .section h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="project-container">
+    <h1 class="project-title">Customer Experience Enhancement with Public Data and Generative AI</h1>
+    <div class="project-subtitle">AI Applications Hackathon – EESTech Challenge, Aachen | May 2024</div>
+  
+    <img src="../assets/project-details/gen-ai-cover.gif" alt="Chatbot Feedback Demo" class="project-gif" />
+    <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 10px;">
+      <em>Example of our chatbot analyzing and giving feedback on GitHub issues</em>
+    </p>
+  
+    <div class="section">
+      <h2>Introduction</h2>
+      <p>
+        As part of the AI Applications Hackathon themed <strong>"How can we improve customer experience with public data and generative AI?"</strong>, our team developed an intelligent feedback assistant that enhances GitHub issue handling. Leveraging <strong>Llama-2</strong> and real-world issue data from <strong>Infineon</strong>, we built a prototype that provides multi-perspective, actionable feedback to improve customer experience.
+      </p>
+      <br>
+      <p>
+        The core of our solution is a persona-driven feedback system powered by a large language model. It processes each GitHub issue and generates structured summaries and evaluations based on specific user experience metrics—such as friendliness, response quality, and customer satisfaction.
+      </p>
+    </div>
+  
+    <div class="section">
+      <h2>Solution Overview</h2>
+      <ul>
+        <li>A GitHub issue dataset (as a structured DataFrame) was provided by <strong>Infineon</strong>.</li>
+        <li>Raw data was preprocessed to extract key elements relevant to customer support, such as initial queries, responses, and resolution history.</li>
+        <li>Processed data was passed to a <strong>Llama-2 model (llama-2-7b-chat.Q8_0.gguf)</strong> running locally on CPU to generate:
+          <ul>
+            <li>Three experience scores: Friendliness, Response Quality, Customer Satisfaction</li>
+            <li>Feedback from three predefined personas</li>
+          </ul>
+        </li>
+        <li>The three personas were:
+          <ul>
+            <li><strong>Herald</strong> – Customer Support Manager</li>
+            <li><strong>Daniel</strong> – Customer Experience Designer</li>
+            <li><strong>Sarah</strong> – Marketing Manager</li>
+          </ul>
+        </li>
+        <li>A web-based UI was built for users to select an issue ID and view generated feedback interactively.</li>
+      </ul>
+    </div>
+  
+    <div class="section">
+      <h2>Workflow & Technical Highlights</h2>
+      <ul>
+        <li>Preprocessed GitHub issues to isolate question/response threads.</li>
+        <li>Extracted and formatted relevant fields to create prompt-ready context for the LLM.</li>
+        <li>Used <strong>Llama-2-7B Chat</strong> model locally in quantized format to optimize for memory usage.</li>
+        <li>Generated persona-specific feedback using role-based prompt engineering.</li>
+        <li>Built an interactive UI to explore issues and compare feedback perspectives.</li>
+        <li>Entire inference pipeline was executed on <strong>CPU</strong>, resulting in a ~5–7 min delay per issue.</li>
+      </ul>
+    </div>
+  
+    <div class="section">
+      <h2>Project Outcomes</h2>
+      <ul>
+        <li><strong>2nd Place Winner</strong> at the EESTech Hackathon in Aachen, May 2024.</li>
+        <li>Delivered a working prototype that could be developed into a real support analytics module.</li>
+        <li>Demonstrated potential of public data and generative AI for enterprise feedback analysis.</li>
+        <li>Despite hardware and time constraints, team successfully completed the core MVP.</li>
+      </ul>
+    </div>
+  
+    <div class="section">
+      <h2>Limitations & Future Directions</h2>
+      <ul>
+        <li>Inference speed was limited by the lack of GPU support—CPU-based processing took several minutes per issue.</li>
+        <li>Further development could involve:
+          <ul>
+            <li>Deploying the LLM in a cloud/GPU environment</li>
+            <li>Adding sentiment analysis and visualization dashboards</li>
+            <li>Training custom fine-tuned models for domain-specific accuracy</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="section">
+      <h2>Development Environment</h2>
+      <ul>
+        <li><strong>Model:</strong> Llama-2-7b-chat.Q8_0.gguf</li>
+        <li><strong>LLM Provider:</strong> Hugging Face</li>
+        <li><strong>Hardware:</strong> Local CPU (no GPU used)</li>
+        <li><strong>Languages & Tools:</strong> Python, VS Code</li>
+      </ul>
+    </div>
+  
+    <div class="section code-link">
+      <h2>Project Resources</h2>
+      <ul>
+        <li><a href="https://github.com/mechgguy/eestech-hackathon" target="_blank">Full Project Repository</a></li>
+        <li><a href="https://github.com/mechgguy/eestech-hackathon/blob/main/AInfineon.py" target="_blank">Backend Processing Script</a></li>
+        <li><a href="https://github.com/mechgguy/eestech-hackathon/tree/main/Chatbot" target="_blank">Chatbot Implementation</a></li>
+      </ul>
+    </div>
+  
+    <div class="section code-link">
+      <h2>Event Gallery</h2>
+      <ul>
+        <li><a href="<!-- Insert your gallery link here -->" target="_blank">View Moments from the Hackathon</a></li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
